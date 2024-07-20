@@ -1,38 +1,288 @@
-.App {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 3% 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-image: url('/public/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+div.container {
+  background-color: bisque; /* Белый фон с прозрачностью */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  width: 60%;
+  height: 90vh;
   text-align: center;
+  overflow-y: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container::-webkit-scrollbar {
+  width: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: #ff8f24;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 143, 36, 0.44);
+}
+
+.mainTitle {
+  font-size: 45px;
+  font-family: "Playwrite BE VLG", cursive;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(90deg, #69b3e7, #8ecae6, #69b3e7, #8ecae6);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 10s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0%;
+  }
+  33% {
+    background-position: 100%;
+  }
+  66% {
+    background-position: 200%;
+  }
+  100% {
+    background-position: 300%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+input.wishItem{
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: "Playwrite BE VLG", cursive;
+  font-size: 14px;
+  vertical-align: baseline;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: .16px;
+  border-radius: 0;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  width: 80%;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid #8d8d8d;
+  background-color: bisque;
+  padding: 0 16px;
+  color: #161616;
+  transition: background-color 70ms cubic-bezier(.2,0,.38,.9),outline 70ms cubic-bezier(.2,0,.38,.9);
+  :focus{
+    outline: 2px solid #0f62fe;
+    outline-offset: -2px;
+  }
+
+}
+
+button.wishItemButton {
+  display: inline-block;
+  position: relative;
+  outline: 0;
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  background-image: url('/public/images/heart1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: background-image 0.3s;
+  background-color: transparent;
+}
+
+.wishItemButton:hover {
+  background-image: url('/public/images/heart2.png');
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+li.listItem {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #fdcfa2;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-family: "Playwrite BE VLG", cursive;
+  word-wrap: break-word; /* Перенос слов */
+  word-break: break-word; /* Перенос слов */
+  white-space: normal;
+}
+li.listItem span {
+  text-align: left;
+  flex-grow: 1;
+  margin-right: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button.wishItemDeleteButton{
+  display: inline-block;
+  position: relative;
+  outline: 0;
+  border: none;
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  background-image: url('/public/images/x.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  background-color: transparent;
 }
